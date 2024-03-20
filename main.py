@@ -1,10 +1,11 @@
 def main():
     book_path = "books/frankenstein.txt"
-    text = get_book_text(book_path)
+    #text = get_book_text(book_path)
     #print(text)
-    print(word_count(text))
+    #print(word_count(text))
     #print(letter_map())
-    print(letter_count(text))
+    #print(letter_count(text))
+    print(report(book_path))
 
 def get_book_text(path):
     with open(path) as f:
