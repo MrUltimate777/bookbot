@@ -31,4 +31,19 @@ def letter_count(text):
             count[char] += 1
     return count
 
+def report(path):
+    text = get_book_text(path)
+    num_of_words = word_count(text)
+    letter_report = letter_count(text)
+
+    begining_section = f"--- Begin the Report of {path} ---\n"
+    word_count_section = f"Total words in file: {num_of_words}\n"
+    letter_count_section = ""
+    for char in letter_report.keys():
+        line = f"Character {char} appeared {letter_report[char]} times.\n"
+        letter_count_section += line
+    end_section = "--- End of Report ---"
+    summary = begining_section + word_count_section + letter_count_section + end_section
+    return summary
+
 main()
