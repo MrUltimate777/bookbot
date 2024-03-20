@@ -4,6 +4,7 @@ def main():
     #print(text)
     print(word_count(text))
     #print(letter_map())
+    print(letter_count(text))
 
 def get_book_text(path):
     with open(path) as f:
@@ -22,7 +23,12 @@ def letter_map():
     return letter_map
 
 def letter_count(text):
-    
-    pass
+    count = letter_map()
+    for char in text.lower():
+        if (char not in count):
+            continue
+        else:
+            count[char] += 1
+    return count
 
 main()
